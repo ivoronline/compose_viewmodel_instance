@@ -14,10 +14,13 @@ class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    val myViewModel = MyViewModel()       //Create Model Instance
+    val myViewModel = MyViewModel()         //Create single Model Instance
 
     setContent {
-      MyCounter(myViewModel)              //Model Instance is the only Parameter
+      Column {
+        MyCounter(myViewModel)              //The same Model Instance is the only Parameter
+        MyCounter(myViewModel)              //The same Model Instance is the only Parameter
+      }
     }
 
   }
